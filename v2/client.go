@@ -687,6 +687,7 @@ func (c *client) createDefaultRequest(q Query) (*http.Request, error) {
 		params.Set("rp", q.RetentionPolicy)
 	}
 	params.Set("params", string(jsonParameters))
+	params.Set("precision", "rfc3339")
 
 	if q.Precision != "" {
 		params.Set("epoch", q.Precision)
